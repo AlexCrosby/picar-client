@@ -1,18 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState, useEffect} from "react";
+import ConnectToCar from "./components/socket";
+import KeyHandler from "./components/controls";
+import Gpad from  "./components/gamepad";
 
 function App() {
+    // window.addEventListener('keydown', (event) => {
+    //     console.log("THIS LISTENER WORKS")
+    // });
+
+
+    const [state, setState] = useState("Init");
+    const [key, setKey] = useState("None")
+
+    useEffect(() => {
+
+        const socket = ConnectToCar(setState);
+        // eslint-disable-next-line no-unused-vars
+        const keys = KeyHandler(setKey, socket)
+    }, []);
+
     return (
         <div>
-            <head>
-                <title>Car Stream</title>
-            </head>
-            <body>
             <h1>Car Stream</h1>
-            <img src="http://127.0.0.1:5000/video_feed"/>
-            </body>
+            <>Status: {state}</><br/>
+            <>Last key pressed: {key}</>
+            <div>
+                <img src="http://127.0.0.1:5000/video_feed" alt={''}/>
+            </div>
+            here
+            <Gpad/>
         </div>
-);
+    );
 }
 
 export default App;
