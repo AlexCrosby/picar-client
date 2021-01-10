@@ -26,7 +26,7 @@ function App() {
             <>Status: {state}</><br/>
             <>Last key pressed: {key}</>
             <div>
-                <img src="http://127.0.0.1:5000/video_feed" alt={''}/>
+                <img src="http://192.168.1.94:5000/video_feed" alt={''}/>
             </div>
             here
             <Gpad/>

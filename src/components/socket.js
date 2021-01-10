@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 
 function ConnectToCar(setState) {
     //const [response, setResponse] = useState("");
-    const socket = socketIOClient("http://127.0.0.1:5000",{
+    const socket = socketIOClient("http://192.168.1.94:5000",{
         transports: ["websocket"]});
     socket.on("status", data => {
         //setResponse(data);
