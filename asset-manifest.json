@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/picar-client/static/css/main.7d180cbf.chunk.css",
+    "main.js": "/picar-client/static/js/main.e4f34660.chunk.js",
+    "main.js.map": "/picar-client/static/js/main.e4f34660.chunk.js.map",
+    "runtime-main.js": "/picar-client/static/js/runtime-main.49b7a037.js",
+    "runtime-main.js.map": "/picar-client/static/js/runtime-main.49b7a037.js.map",
+    "static/js/2.74f0c6cb.chunk.js": "/picar-client/static/js/2.74f0c6cb.chunk.js",
+    "static/js/2.74f0c6cb.chunk.js.map": "/picar-client/static/js/2.74f0c6cb.chunk.js.map",
+    "static/js/3.56abc7b4.chunk.js": "/picar-client/static/js/3.56abc7b4.chunk.js",
+    "static/js/3.56abc7b4.chunk.js.map": "/picar-client/static/js/3.56abc7b4.chunk.js.map",
+    "index.html": "/picar-client/index.html",
+    "static/css/main.7d180cbf.chunk.css.map": "/picar-client/static/css/main.7d180cbf.chunk.css.map",
+    "static/js/2.74f0c6cb.chunk.js.LICENSE.txt": "/picar-client/static/js/2.74f0c6cb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.49b7a037.js",
+    "static/js/2.74f0c6cb.chunk.js",
+    "static/css/main.7d180cbf.chunk.css",
+    "static/js/main.e4f34660.chunk.js"
+  ]
+}
