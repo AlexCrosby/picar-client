@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import ConnectToCar from "./components/socket";
 import KeyHandler from "./components/controls";
 import Gpad from  "./components/gamepad";
-
+import Stream from "./components/stream";
 function App() {
     // window.addEventListener('keydown', (event) => {
     //     console.log("THIS LISTENER WORKS")
@@ -12,24 +12,24 @@ function App() {
 
     const [state, setState] = useState("Init");
     const [key, setKey] = useState("None")
+    let socket = null
+
 
     useEffect(() => {
-
-        const socket = ConnectToCar(setState);
-        // eslint-disable-next-line no-unused-vars
-        const keys = KeyHandler(setKey, socket)
-    }, []);
+        socket = ConnectToCar(setState);
+        KeyHandler(setKey, socket)
+        }, []);
 
     return (
         <div>
             <h1>Car Stream</h1>
-            <>Status: {state}</><br/>
+            <>Status: {state}</>
+            <br/>
             <>Last key pressed: {key}</>
             <div>
-                <img src="http://192.168.1.94:5000/video_feed" alt={''}/>
+                <Stream />
             </div>
-            here
-            <Gpad/>
+            <Gpad deadZone={0.1}/>
         </div>
     );
 }

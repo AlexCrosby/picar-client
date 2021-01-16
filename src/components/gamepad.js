@@ -1,5 +1,6 @@
 import Gamepad from 'react-gamepad'
 import React from 'react';
+import {socket} from "./socket";
 
 class Gpad extends React.Component {
     connectHandler(gamepadIndex) {
@@ -11,11 +12,18 @@ class Gpad extends React.Component {
     }
 
     buttonChangeHandler(buttonName, down) {
-        console.log(buttonName, down)
+        if (buttonName in ['']) {
+            console.log(buttonName, down)
+        }
     }
 
     axisChangeHandler(axisName, value, previousValue) {
-        console.log(axisName, value)
+        if (['LeftStickX', 'LeftTrigger','RightTrigger'].includes(axisName)) {
+            console.log(axisName, value)
+            socket.emit('command', {[axisName]:value})
+        }
+
+
     }
 
     buttonDownHandler(buttonName) {
@@ -28,18 +36,18 @@ class Gpad extends React.Component {
 
     render() {
         return (
-<div>
-    <h2>Gamepad Stuff</h2>
+            <div>
+                <h2>Gamepad Stuff</h2>
                 <Gamepad
                     onConnect={this.connectHandler}
                     onDisconnect={this.disconnectHandler}
 
                     onButtonChange={this.buttonChangeHandler}
                     onAxisChange={this.axisChangeHandler}
-                    >
-                    <React.Fragment />
+                >
+                    <React.Fragment/>
                 </Gamepad>
- </div>
+            </div>
 
         )
     }

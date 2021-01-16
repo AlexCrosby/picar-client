@@ -1,9 +1,9 @@
 import socketIOClient from 'socket.io-client';
 
-
+let socket = null
 function ConnectToCar(setState) {
-    //const [response, setResponse] = useState("");
-    const socket = socketIOClient("http://192.168.1.94:5000",{
+
+    socket = socketIOClient("http://picar1.duckdns.org:5000",{
         transports: ["websocket"]});
     socket.on("status", data => {
         //setResponse(data);
@@ -22,3 +22,4 @@ function ConnectToCar(setState) {
 }
 
 export default ConnectToCar;
+export {socket}

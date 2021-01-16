@@ -18,7 +18,8 @@ function KeyHandler(setKey, socket) {
         let k = e.key.toUpperCase()
         if (e.repeat) return;
         if (['W', 'A', 'S', 'D'].includes(k)) {
-            var message = {['Key' + k]: 1}
+            var value = (['W', 'S'].includes(k))?0.5:1
+            var message = {['Key' + k]: value}
             socket.emit('command', message)
 
             setKey(k);
