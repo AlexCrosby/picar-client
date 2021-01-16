@@ -22,7 +22,7 @@ function Stream() {
     let startStream = () => {
 
         var address = 'picar1.duckdns.org:8090/stream/webrtc'
-        var protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+        var protocol = window.location.protocol === "https:" ? "ws:" : "ws:";
         var wsurl = protocol + '//' + address;
 
         if (!isStreaming) {
