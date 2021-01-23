@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 let socket = null
 function ConnectToCar(setState) {
 
-    socket = socketIOClient("http://picar1.duckdns.org:5000",{
+    socket = socketIOClient("wss://picar1.duckdns.org:5000",{
         transports: ["websocket"]});
     socket.on("status", data => {
         //setResponse(data);
